@@ -19,10 +19,20 @@ export default function Home() {
     setSongs(filteredSongs)
   }
 
+  function addSong(song){
+    console.log(song);
+    setQueue((prev)=>[
+      ...prev,
+      song
+    ])
+    console.log(queue);
+    
+  }
+
   return (
    <div>
     <SearchBar search={search}></SearchBar>
-    <SongsList songs={songs}></SongsList>
+    <SongsList addSong={addSong} songs={songs}></SongsList>
     <Queue songs={queue}></Queue>
    </div>
   );
