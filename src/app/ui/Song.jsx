@@ -8,8 +8,8 @@ export default function Song({song, id, addSong}){
 
     return(
         <div className={`flex flex-col
-        border-1 border-black p-2 w-9/10 m-2 
-        bg-white/50 drop-shadow-md
+        p-2 w-full mt-2 
+        bg-white/50 drop-shadow-md box-border
         `}>
             <div className="flex justify-between">
             <h1 className={`${ralewayBold.className} w-3/4`}>{song.title} </h1>
@@ -18,7 +18,6 @@ export default function Song({song, id, addSong}){
             />
             </div>
             <h2> {song.artist}</h2>
-            <p>{id}</p>
         </div>
     )
 }

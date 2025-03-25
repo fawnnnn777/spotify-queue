@@ -4,6 +4,7 @@ import { mockSongs } from "./data/mock";
 import SongsList from "./ui/SongsList";
 import { useState } from "react";
 import Queue from "./ui/Queue";
+import NowPlaying from "./ui/NowPlaying";
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
       setSongs(mockSongs)
     }
 
-    let filteredSongs = mockSongs.filter((song)=>song.title.toUpperCase().includes(query.toUpperCase()))
+    let filteredSongs = mockSongs.filter((song)=>song.title.toUpperCase().includes(query.toUpperCase()) || song.artist.toUpperCase().includes(query.toUpperCase()))
     setSongs(filteredSongs)
   }
 
@@ -30,10 +31,13 @@ export default function Home() {
   }
 
   return (
-   <div>
+    <div className="flex w-screen justify-center">
+   <div className="h-screen w-full flex items-center flex-col">
     <SearchBar search={search}></SearchBar>
     <SongsList addSong={addSong} songs={songs}></SongsList>
-    <Queue songs={queue}></Queue>
    </div>
+   <Queue songs={queue}></Queue>
+   <NowPlaying song={songs[0]}></NowPlaying>
+    </div>
   );
 }

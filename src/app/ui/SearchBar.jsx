@@ -15,7 +15,9 @@ export default function SearchBar({search}){
     return(
         <div className="relative text-l flex justify-center">
             <form className="m-5 flex">
-                <FiSearch className="m-2"></FiSearch>
+                {!input ? <FiSearch className="absolute m-2"></FiSearch>
+                : null
+                }
                 <input 
                 onChange={(e)=>setInput(e.target.value)}
                 value={input}

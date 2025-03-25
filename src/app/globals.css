@@ -5,6 +5,8 @@
   --foreground: #EFE9D5;
 }
 
+@plugin 'tailwind-scrollbar';
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
