@@ -5,12 +5,7 @@ import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import Sortable from "./Sortable";
 
-export default function({songs}){
-
-    function handleDragEnd(event){
-        console.log('drag ended', event);
-        
-    }
+export default function({songs, handleDragEnd}){
 
     return (
         <DndContext onDragEnd={handleDragEnd}>

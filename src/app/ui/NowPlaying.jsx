@@ -8,10 +8,10 @@ export default function NowPlaying({song}){
                bg-white/50 drop-shadow-md box-border
                absolute bottom-4
                `}>
-                   <div className="flex justify-between">
+                {song? <div className="flex justify-between">
                    <h1 className={`${ralewayBold.className} w-3/4`}>{song.title} </h1>
-                   </div>
                    <h2> {song.artist}</h2>
+                   </div> : <h1>no song playing</h1> }
                </div>
     )
 }
